@@ -1,23 +1,22 @@
-import { useEffect, useState } from "react";
-import ProductCard from "../components/ProductCard";
+import Hero from "../Containers/Hero";
+import Features from "../Containers/Features";
+import Brand from "../Containers/Brand";
+import About from "../Containers/About";
+import Reviews from "../Containers/Reviews";
+import Contact from "../Containers/Contact";
 
-export default function Home() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    async function fetchProducts() {
-      const res = await fetch("https://fakestoreapi.com/products");
-      const data = await res.json();
-      setProducts(data);
-    }
-    fetchProducts();
-  }, []);
-
+const Home = () => {
   return (
-    <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {products.map((p) => (
-        <ProductCard key={p.id} product={p} />
-      ))}
+    <div className=" overflow-x-hidden" id="home">
+      {" "}
+      <Hero />
+      <Brand />
+      <Features />
+      <About />
+      <Reviews />
+      <Contact />
     </div>
   );
-}
+};
+
+export default Home;

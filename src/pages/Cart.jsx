@@ -1,37 +1,64 @@
 import { useCart } from "../context/CartContext";
 
 export default function Cart() {
-  const { cart, removeFromCart } = useCart();
-
-  const total = cart.reduce((sum, p) => sum + p.price, 0).toFixed(2);
+  const { cartItems, removeFromCart, updateQty, totalPrice } = useCart();
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
-      {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+    <section className="min-h-screen w-screen bg-black text-white px-8 py-20">
+      <h1 className="text-4xl font-bold text-yellow-400 mb-10">
+        Shopping Cart
+      </h1>
+
+      {cartItems.length === 0 ? (
+        <p className="text-gray-400">Your cart is empty.</p>
       ) : (
-        <>
-          <ul className="space-y-4">
-            {cart.map((item) => (
-              <li
-                key={item.id}
-                className="flex items-center justify-between bg-white p-4 shadow rounded"
-              >
-                <span>{item.title}</span>
-                <span>${item.price}</span>
+        <div className="space-y-6 max-w-4xl">
+          {cartItems.map((item) => (
+            <div
+              key={item.id}
+              className="flex items-center gap-6 border-b border-gray-800 pb-4"
+            >
+              <img
+                src={item.image}
+                className="w-24 h-24 object-cover rounded"
+              />
+
+              <div className="flex-1">
+                <h3 className="text-xl">{item.name}</h3>
+                <p className="text-yellow-400">${item.price}</p>
+              </div>
+
+              <div className="flex items-center gap-3">
                 <button
-                  onClick={() => removeFromCart(item.id)}
-                  className="text-red-600 text-sm"
+                  onClick={() => updateQty(item.id, item.qty - 1)}
+                  className="px-3 border border-yellow-500"
                 >
-                  Remove
+                  -
                 </button>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 font-semibold">Total: ${total}</p>
-        </>
+                <span>{item.qty}</span>
+                <button
+                  onClick={() => updateQty(item.id, item.qty + 1)}
+                  className="px-3 border border-yellow-500"
+                >
+                  +
+                </button>
+              </div>
+
+              <button
+                onClick={() => removeFromCart(item.id)}
+                className="text-red-500"
+              >
+                Remove
+              </button>
+            </div>
+          ))}
+
+          <div className="text-right text-2xl mt-6">
+            Total:{" "}
+            <span className="text-yellow-400">${totalPrice.toFixed(2)}</span>
+          </div>
+        </div>
       )}
-    </div>
+    </section>
   );
 }
