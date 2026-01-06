@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroWatch from "../assets/hero-watch.jpg";
+import heroWatch from "../Assets/hero-watch.jpg";
 
 export default function Hero() {
   return (

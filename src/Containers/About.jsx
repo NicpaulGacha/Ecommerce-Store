@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import storyImg from "../assets/story.jpg"; // your image
+import storyImg from "../Assets/story.jpg"; // your image
 
 export default function BrandStory() {
   return (
