@@ -112,11 +112,11 @@ export default function Navbar() {
             </button>
 
             <ul className="space-y-6 text-lg">
-              {["Home", "Shop", "Blog", "About", "Contact"].map((item) => (
+              {["Home"].map((item) => (
                 <li key={item}>
                   <a
                     onClick={() => setOpen(false)}
-                    href={`#${item.toLowerCase()}`}
+                    href={`/#${item.toLowerCase()}`}
                     className="text-gray-300 hover:text-yellow-500  transition"
                   >
                     {item}
@@ -126,7 +126,7 @@ export default function Navbar() {
             </ul>
             <Link
               to="/shop"
-              className="text-gray-300 hover:text-yellow-500 transition"
+              className="text-1.5xl text-gray-300 hover:text-yellow-500 transition mt-6 mb-6"
             >
               Shop
             </Link>
