@@ -1,13 +1,13 @@
-import watch1 from "../assets/watches/watch1.jpg";
-import watch2 from "../assets/watches/watch2.jpg";
-import watch3 from "../assets/watches/watch3.jpg";
-import watch4 from "../assets/watches/watch4.jpg";
-import watch5 from "../assets/watches/watch5.jpg";
-import watch6 from "../assets/watches/watch6.jpg";
-import watch7 from "../assets/watches/watch7.jpg";
-import watch8 from "../assets/watches/watch8.png";
-import watch9 from "../assets/watches/watch9.jpg";
-import watch10 from "../assets/watches/watch10.jpg";
+import watch1 from "../Assets/watches/watch1.jpg";
+import watch2 from "../Assets/watches/watch2.jpg";
+import watch3 from "../Assets/watches/watch3.jpg";
+import watch4 from "../Assets/watches/watch4.jpg";
+import watch5 from "../Assets/watches/watch5.jpg";
+import watch6 from "../Assets/watches/watch6.jpg";
+import watch7 from "../Assets/watches/watch7.jpg";
+import watch8 from "../Assets/watches/watch8.png";
+import watch9 from "../Assets/watches/watch9.jpg";
+import watch10 from "../Assets/watches/watch10.jpg";
 
 export const watches = [
   {
